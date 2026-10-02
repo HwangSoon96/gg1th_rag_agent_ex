@@ -1,4 +1,4 @@
-from langchain_openai import ChatOpenAI
+from langchain_openai import ChatOpenAI, embeddings
 
 import os
 from dotenv import load_dotenv
@@ -26,3 +26,15 @@ def llm_connect(
         use_responses_api=False,  # base url로 할 때는 이부분 넣어야 함.(MonoRouter 사용)
         max_tokens=max_tokens,
     )
+
+from langchain_openai import OpenAIEmbeddings
+
+
+def get_embeddings():
+    embedding_model = "text-embedding-3-small"
+    embeddings = OpenAIEmbeddings(
+        api_key=api_key,
+        model=embedding_model,
+        base_url=BASE_URL,
+        )
+    return embeddings
