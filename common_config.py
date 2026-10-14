@@ -24,7 +24,8 @@ CACHE_DIR = Path(__file__).parent / ".cache"
 CACHE_DIR.mkdir(exist_ok=True)
 # SQLiteCache가 캐시 히트마다 내는 allowed_objects 경고 숨김 (직접 만든 로컬 캐시라 신뢰 가능, 경고를 끌 옵션이 없음)
 warnings.filterwarnings("ignore", message="The default value of `allowed_objects`")
-set_llm_cache(SQLiteCache(database_path=str(CACHE_DIR / "llm_cache.db")))
+LLM_CACHE = SQLiteCache(database_path=str(CACHE_DIR / "llm_cache.db"))
+set_llm_cache(LLM_CACHE)
 
 def llm_connect(
     # model="claude-haiku-4.5"
