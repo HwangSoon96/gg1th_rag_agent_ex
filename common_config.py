@@ -30,7 +30,8 @@ set_llm_cache(LLM_CACHE)
 def llm_connect(
     # model="claude-haiku-4.5"
     # model="gemini-3.5-flash"
-    model: str = "gpt-5.4-mini",
+    # model: str = "gpt-5.4-mini",
+    model: str = "gpt-4o-mini",
     api_key: str = api_key,
     temperature: float = 0,
     max_tokens: int = 2086,
